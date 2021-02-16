@@ -1,13 +1,13 @@
 #' Sztuczny zbior danych
 #'
-#' Zbior danych sztucznie wygenerowanych
+#' Zbior danych sztucznie wygenerowany.
 #' @format Ramka denych, ktora ma 3 kolumny i 2289 wierszy
 #'
-#' \code{data} - Data w formacie rok-miesiac-dzien
+#' \code{data} - data z kazdego dnia od 2014-11-01 do 2021-02-05,
 #'
-#' \code{cena} - Ceny (PLN)
+#' \code{cena} - cena z rozkladu normalnego o srednej 1000 i odchylenie standardowe 100,
 #'
-#' \code{ilosc} - Ilosc (szt)
+#' \code{ilosc} - zbudowana losowo sposrod liczb od 1 do 2289 - losowanie liczb ze zwracaniem.
 #'
 #' @docType data
 #'

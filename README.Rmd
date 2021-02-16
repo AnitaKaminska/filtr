@@ -111,9 +111,13 @@ filtr1("dane","cena", 700, 900)
 ```{r, error=TRUE}
 filtr1(dane, "cena", 700, 900, 5)
 ```
+## Instalacja pakietu
 
+Pakiet \texttt{filtr} można zaistalować stosując poniższe polecenie:
 
-
+```{r, eval=FALSE}
+devtools::install_github("AnitaKaminska/filtr")
+```
 
 
 

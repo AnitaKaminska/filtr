@@ -64,8 +64,14 @@
 
 #' @title Filtrowanie z limitem dolnym i gornym
 #'
-#' @description Dokonuje selekcji tych rekordow, dla ktorych wskazana kolumna jest miedzy limitem dolnym a limitem gornym
-#' @param dane Zbior danych uzytkownika jako data frame
+#' @description Pierwsza funkcja dokonuje selekcji tych rekordow, dla ktorych wskazana kolumna (np. cena)
+#'             jest między limit_dolny a limit_górny.
+#' @param dane Zbior danych uzytkownika jako data frame. Funkcje te dzialaja na ramce danych zawierającej 3 kolumny:
+#' \itemize{
+#'     \item data (rok-miesiąc-dzień),
+#'     \item cena,
+#'     \item ilosc.
+#' }
 #' @param kolumna Kolumna ktora zostanie wykorzystana do dokonywania selekcji
 #' @param limit_dolny Najmniejsza akceptowalna wartosc z danej kolumny
 #' @param limit_gorny Najwieksza akceptowalna wartosc z danej kolumny
@@ -86,12 +92,17 @@ filtr1 <- function(dane, kolumna, limit_dolny, limit_gorny, flaga=FALSE) {
 }
 
 
-#' @title Filotrowanie z kwantylem dolnym i gornym
+#' @title Filtrowanie z kwantylem dolnym i gornym
 #'
 #' @description Oblicza kwantyle rozkladu wartosci ze wskazanej kolumny
 #'              (odpowiednio rzedu kwantyl dolny i kwantyl gorny) i dokonuje selekcji
 #'              tych wartosci z danej kolumny, ktore sie mieszcza pomiedzy
-#' @param dane Zbior danych uzytkownika jako data frame
+#' @param dane Zbior danych uzytkownika jako data frame. Funkcje te dzialaja na ramce danych zawierającej 3 kolumny:
+#' \itemize{
+#'     \item data (rok-miesiąc-dzień),
+#'     \item cena,
+#'     \item ilosc.
+#' }
 #' @param kolumna Kolumna ktora zostanie wykorzystana do dokonywania selekcji
 #' @param kwantyl_dolny Limit dolny
 #' @param kwantyl_gorny Limit gorny
