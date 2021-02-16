@@ -2,12 +2,17 @@
 % Please edit documentation in R/hello.R
 \name{filtr2}
 \alias{filtr2}
-\title{Filotrowanie z kwantylem dolnym i gornym}
+\title{Filtrowanie z kwantylem dolnym i gornym}
 \usage{
 filtr2(dane, kolumna, kwantyl_dolny, kwantyl_gorny, flaga = FALSE)
 }
 \arguments{
-\item{dane}{Zbior danych uzytkownika jako data frame}
+\item{dane}{Zbior danych uzytkownika jako data frame. Funkcje te dzialaja na ramce danych zawierającej 3 kolumny:
+\itemize{
+\item data (rok-miesiąc-dzień),
+\item cena,
+\item ilosc.
+}}
 
 \item{kolumna}{Kolumna ktora zostanie wykorzystana do dokonywania selekcji}
 
