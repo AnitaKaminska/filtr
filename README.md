@@ -1,7 +1,7 @@
 Witam w pakiecie 
 ----------------
 
-Pakiet filtr zawiera dwie funckje: i . Funkcje te działają na ramce
+Pakiet filtr zawiera dwie funckje. Funkcje te działają na ramce
 danych zawierającej 3 kolumny:
 Pakiet zawiera przykładową ramkę danych :
 Są to dane transakcyjne zwierające 2289 obserwacji.
