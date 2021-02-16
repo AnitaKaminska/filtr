@@ -7,7 +7,12 @@
 filtr1(dane, kolumna, limit_dolny, limit_gorny, flaga = FALSE)
 }
 \arguments{
-\item{dane}{Zbior danych uzytkownika jako data frame}
+\item{dane}{Zbior danych uzytkownika jako data frame. Funkcje te dzialaja na ramce danych zawierającej 3 kolumny:
+\itemize{
+\item data (rok-miesiąc-dzień),
+\item cena,
+\item ilosc.
+}}
 
 \item{kolumna}{Kolumna ktora zostanie wykorzystana do dokonywania selekcji}
 
@@ -25,7 +30,8 @@ Funkcja zwraca:
 }
 }
 \description{
-Dokonuje selekcji tych rekordow, dla ktorych wskazana kolumna jest miedzy limitem dolnym a limitem gornym
+Pierwsza funkcja dokonuje selekcji tych rekordow, dla ktorych wskazana kolumna (np. cena)
+jest między limit_dolny a limit_górny.
 }
 \examples{
 filtr1(dane,"cena", 600, 850)
