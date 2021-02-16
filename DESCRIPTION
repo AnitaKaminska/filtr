@@ -4,7 +4,13 @@ Title: Filtrowanie danych
 Version: 0.0.1
 Author: Anita Kamińska
 Maintainer: Anita Kamińska <anita.kaminska@edu.uni.lodz.pl>
-Description: Dwie funkcje do filtrowania danych w oparciu o ramkę danych
+Description: Pakiet filtr zawiera dwie funckje: filtr1 i filtr2.
+    Pierwsza funkcja dokonuje selekcji tych rekordów, dla których 
+    wskazana kolumna (np. cena) jest między limit_dolny a limit_górny.
+    Druga funkcja oblicza kwantyle rozkładu wartości ze wskazanej kolumny 
+    (odpowiednio rzędu kwantyl_dolny i kwantyl_górny) i dokonuje selekcji 
+    tych wartości z zadanej kolumny, które się mieszczą pomiędzy.  
+URL: https://github.com/AnitaKaminska/filtr
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true

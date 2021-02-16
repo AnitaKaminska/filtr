@@ -156,3 +156,12 @@ filtr1(dane, "cena", 700, 900, 5)
 
     ## Error in .filtr(dane, kolumna, limit_dolny, limit_gorny, flaga, 1): 
     ## Flaga nie jest wartoscia logiczna
+
+Instalacja pakietu
+------------------
+
+Pakiet można zaistalować stosując poniższe polecenie:
+
+``` r
+devtools::install_github("AnitaKaminska/filtr")
+```
