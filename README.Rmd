@@ -1,0 +1,120 @@
+---
+title: "Pakiet filtr"
+author: "Anita_Kamińska"
+date: "16 02 2021"
+output:
+  pdf_document: default
+  md_document:
+    variant: markdown_github
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Witam w pakiecie \texttt{filtr}
+
+Pakiet filtr zawiera dwie funckje: \texttt{filtr1} i \texttt{filtr2}.\newline
+Funkcje te działają na ramce danych zawierającej 3 kolumny:
+\begin{itemize}
+\item data (rok-miesiąc-dzień),    
+\item cena,
+\item ilość,
+\end{itemize}
+
+Pakiet zawiera przykładową ramkę danych \texttt{dane}:
+\begin{itemize}
+\item data z każdego dnia od 2014-11-01 do 2021-02-05,
+\item cena z rozkładu normalnego o średnej 1000 i odchylenie standardowe 100,
+\item ilość zbudowana losowo spośród liczb od 1 do 2289 - losowanie liczb ze zwracaniem.
+\end{itemize}
+Są to dane transakcyjne zwierające 2289 obserwacji.
+
+Pakiet wczytujemy następująco:
+```{r}
+library(filtr)
+```
+
+Pojawienie się przywitania informuje nas, że pakiet został wczytany.  
+
+
+## Filtr 1  i Filtr 2   
+Pierwsza funkcja (\texttt{filtr1(dane, kolumna, limit\_dolny, limit\_górny, flaga=FALSE)}) dokonuje selekcji tych rekordów, dla których wskazana \texttt{kolumna} (np. cena) jest między \texttt{limit\_dolny} a \texttt{limit\_górny}.
+  
+Druga funkcja (\texttt{filtr2(dane, kolumna, kwantyl\_dolny, kwantyl\_górny, flaga=FALSE)}) oblicza kwantyle rozkładu wartości ze wskazanej kolumny (odpowiednio rzędu \texttt{kwantyl\_dolny} i \texttt{kwantyl\_górny}) i dokonuje selekcji tych wartości z zadanej kolumny, które się mieszczą pomiędzy.  
+  
+Funkcje te zwrajacaja
+\begin{itemize}
+     \item dla \texttt{flaga=FALSE} zawezona ramke (tylko rekordy spelniajace warunki filtru),
+     \item dla \texttt{flaga=TRUE} z pelna ramke z dodatkowa kolumna FLAGA (1, gdy wiersz/rekord spelnia krytrium                filtru, 0 gdy nie spelnia).
+\end{itemize}
+
+
+
+### Zastosowanie  
+
+<!-- Ceny od 600 do 730 zł:  -->
+```{r}
+filtr1(dane,"cena", 600, 730)
+```
+
+<!-- Ilość od 400 do 410 sztuk: -->
+```{r}
+filtr1(dane,"ilosc", 400, 410)
+```
+
+<!-- Gdy \texttt{flaga} jest ustawiona na TRUE: -->
+```{r}
+head(filtr1(dane,"ilosc", 800, 1750, TRUE))
+```
+
+<!-- Mediana (kwantyl= 0.5) ilości wynosi 1135: -->
+```{r}
+filtr2(dane,"ilosc", 0.5, 0.5)
+```
+
+<!-- Cena od kawantyla 0.25 do kwantyla 0.26: -->
+
+```{r}
+head(filtr2(dane,"cena", 0.25, 0.26))
+```
+\newpage
+### Błędy
+
+Przykładowe reakcje programu na błędne/nieprawidłowe dane:
+
+
+```{r, error=TRUE}
+filtr1(dane,"cena", 700, 600)
+```
+```{r, error=TRUE}
+filtr2(dane,"cena", 0.5, 2)
+```
+
+```{r, error=TRUE}
+filtr2(dane,"ilosc", c(0.5,0.6), 0.7)
+```
+```{r, error=TRUE}
+filtr2(dane,"okno", 0.5, 1)
+```
+
+
+```{r, error=TRUE}
+filtr1(iris,"cena", 700, 900)
+```
+
+
+```{r, error=TRUE}
+filtr1("dane","cena", 700, 900)
+```
+
+```{r, error=TRUE}
+filtr1(dane, "cena", 700, 900, 5)
+```
+
+
+
+
+
+
+
