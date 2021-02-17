@@ -6,6 +6,7 @@ danych zawierającej 3 kolumny:
 - data (rok-miesiąc-dzień),
 - cena,
 - ilość.
+
 Pakiet zawiera przykładową ramkę danych (dane) :
 - data z każdego dnia od 2014-11-01 do 2021-02-05,
 - cena z rozkładu normalnego o średnej 1000 i odchylenie standardowe 100
