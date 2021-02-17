@@ -11,6 +11,7 @@ Pakiet zawiera przykładową ramkę danych (dane) :
 - data z każdego dnia od 2014-11-01 do 2021-02-05,
 - cena z rozkładu normalnego o średnej 1000 i odchylenie standardowe 100
 - ilość zbudowana losowo spośród liczb od 1 do 2289 - losowanie liczb ze zwracaniem.
+
 Są to dane transakcyjne zwierające 2289 obserwacji.
 
 Pakiet wczytujemy następująco:
