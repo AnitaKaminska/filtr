@@ -1,9 +1,15 @@
 Witam w pakiecie 
 ----------------
 
-Pakiet filtr zawiera dwie funkcje. Funkcje te działają na ramce
+Pakiet filtr zawiera dwie funkcje filtr1 i filtr2. Funkcje te działają na ramce
 danych zawierającej 3 kolumny:
-Pakiet zawiera przykładową ramkę danych :
+- data (rok-miesiąc-dzień),
+- cena,
+- ilość.
+Pakiet zawiera przykładową ramkę danych (dane) :
+- data z każdego dnia od 2014-11-01 do 2021-02-05,
+- cena z rozkładu normalnego o średnej 1000 i odchylenie standardowe 100
+- ilość zbudowana losowo spośród liczb od 1 do 2289 - losowanie liczb ze zwracaniem.
 Są to dane transakcyjne zwierające 2289 obserwacji.
 
 Pakiet wczytujemy następująco:
@@ -19,14 +25,19 @@ Pojawienie się przywitania informuje nas, że pakiet został wczytany.
 Filtr 1 i Filtr 2
 -----------------
 
-Pierwsza funkcja () dokonuje selekcji tych rekordów, dla których
-wskazana (np. cena) jest między a .
+Pierwsza funkcja  (filtr1(dane, kolumna, limit_dolny, limit_górny, flaga=FALSE)) 
+dokonuje selekcji tych rekordów, dla których wskazana (np. cena)
+ jest między limit_dolny a limit_górny
 
-Druga funkcja () oblicza kwantyle rozkładu wartości ze wskazanej kolumny
-(odpowiednio rzędu i ) i dokonuje selekcji tych wartości z zadanej
+Druga funkcja  (filtr2(dane, kolumna, kwantyl_dolny, kwantyl_górny, flaga=FALSE)) 
+oblicza kwantyle rozkładu wartości ze wskazanej kolumny
+((odpowiednio rzędu kwantyl_dolny i kwantyl_górny) i dokonuje selekcji tych wartości z zadanej
 kolumny, które się mieszczą pomiędzy.
 
-Funkcje te zwrajacaja
+Funkcje te zwrajacaja:
+- dla flaga=FALSE zawezona ramke (tylko rekordy spelniajace warunki filtru),
+- dla flaga=TRUE z pelna ramke z dodatkowa kolumna FLAGA (1, gdy wiersz/rekord spelnia krytrium
+filtru, 0 gdy nie spelnia).
 ### Zastosowanie
 
 <!-- Ceny od 600 do 730 zł:  -->
