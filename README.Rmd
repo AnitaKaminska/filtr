@@ -14,12 +14,12 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Witam w pakiecie \texttt{filtr}
 
-Pakiet filtr zawiera dwie funckje: \texttt{filtr1} i \texttt{filtr2}.\newline
+Pakiet filtr zawiera dwie funkcje: \texttt{filtr1} i \texttt{filtr2}.\newline
 Funkcje te działają na ramce danych zawierającej 3 kolumny:
 \begin{itemize}
 \item data (rok-miesiąc-dzień),    
 \item cena,
-\item ilość,
+\item ilość.
 \end{itemize}
 
 Pakiet zawiera przykładową ramkę danych \texttt{dane}:
