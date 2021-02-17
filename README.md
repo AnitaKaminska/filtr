@@ -33,7 +33,7 @@ dokonuje selekcji tych rekordów, dla których wskazana (np. cena)
 
 Druga funkcja  (filtr2(dane, kolumna, kwantyl_dolny, kwantyl_górny, flaga=FALSE)) 
 oblicza kwantyle rozkładu wartości ze wskazanej kolumny
-((odpowiednio rzędu kwantyl_dolny i kwantyl_górny) i dokonuje selekcji tych wartości z zadanej
+(odpowiednio rzędu kwantyl_dolny i kwantyl_górny) i dokonuje selekcji tych wartości z zadanej
 kolumny, które się mieszczą pomiędzy.
 
 Funkcje te zwrajacaja:
